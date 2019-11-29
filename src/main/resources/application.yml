@@ -1,0 +1,29 @@
+server:
+ port: 8901
+
+wx:
+ token: fdsFSS122fdaSalkF5654jdl
+
+feign:
+  hystrix:
+    enabled: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 150000
+
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 120000
+
+wx-client-url:
+
+wx-client:
+  ribbon:
+    listOfServers: ${wx-client-url}
